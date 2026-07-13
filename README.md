@@ -1,5 +1,6 @@
-```markdown
 # High-Efficiency Spatial-Temporal Hybrid Architecture for 1D ECG Anomaly Detection: A Theoretical Framework for Edge Environments
+```markdown
+
 
 This repository contains the official, verified open-source Python implementation and hardware profiling pipeline for our proposed hybridized **Conv1D-GRU** framework. The architecture is engineered explicitly for low-power edge microcontrollers, achieving significant reductions in computational complexity and floating-point operations (FLOPs) while maintaining robust classification accuracy on 1D time-series electrocardiogram (ECG) data.
 
