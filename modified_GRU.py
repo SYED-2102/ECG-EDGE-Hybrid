@@ -136,7 +136,7 @@ if __name__ == "__main__":
             results.append(res)
             
         # 2. Evaluate Proposed Architecture & Ablation Study (P=4, 8, 32, 128)
-        pool_sizes = [4, 8, 32, 128]
+        pool_sizes = [4, 8, 16, 32, 128]
         for p in pool_sizes:
             model = build_model("Hybrid_Conv1D_GRU", input_shape, pool_size=p)
             model._name = f"Hybrid_Conv1D_GRU_P{p}"
