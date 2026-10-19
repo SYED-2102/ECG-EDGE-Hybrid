@@ -2,13 +2,13 @@
 
 
 
-This repository contains the official, verified open-source Python implementation and hardware profiling pipeline for our proposed hybridized **Conv1D-GRU** framework. The architecture is engineered explicitly for low-power edge microcontrollers, achieving significant reductions in computational complexity and floating-point operations (FLOPs) while maintaining robust classification accuracy on 1D time-series electrocardiogram (ECG) data.
+This repository contains the official, verified open-source Python implementation and hardware profiling pipeline for our proposed hybridized **Conv1D-GRU** framework. The architecture is engineered explicitly for low-power edge microcontrollers, achieving significant reductions in computational complexity and floating-point operations (FLOPs) while maintaining classification accuracy on 1D time-series electrocardiogram (ECG) data.
 
 ---
 
 ##  Project Overview
 
-Resource-constrained edge hardware demands optimized deep learning models that minimize parameter count and memory latency without degrading diagnostic accuracy. This project provides a complete end-to-end evaluation pipeline that contrasts classic baselines against our proposed spatial-temporal framework across various downsampling pooling factors ($P \in \{4, 8, 32, 128\}$).
+Resource-constrained edge hardware demands optimized deep learning models that minimize parameter count and memory latency without degrading diagnostic accuracy. This project provides a complete end-to-end evaluation pipeline that contrasts classic baselines against our proposed spatial-temporal framework across various downsampling pooling factors ($P \in \{4, 16, 8, 32, 128\}$).
 
 ### Evaluated Architectures:
 1. **Baseline_CNN**: Dual-layer 1D Convolution with Global Average Pooling.
@@ -41,7 +41,7 @@ The pipeline utilizes the widely adopted, preprocessed 125 Hz variant of the MIT
 
 ### Automated Processing Pipeline:
 * **Binary Mapping**: Labels greater than 0 are programmatically mapped to `1` (Anomaly) to establish an objective edge validation environment; normal records are mapped to `0`.
-* **Data Split**: Implements a strict, reproducible train-test split (80% train, 20% test) stratified by target distribution to guarantee standard, non-overlapping evaluation metrics.
+* **Data Split**: Implements an intra-patient split (80% train, 20% test) stratified by target distribution.
 
 ---
 
